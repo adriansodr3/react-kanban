@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Heading, Flex } from "@radix-ui/themes";
+import { CreateTaskForm } from "./components/CreateTaskForm";
+import { TaskBoard } from "./components/TaskBoard";
+import { TasksContextProvider } from "./contexts/TasksContext";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App(){
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <TasksContextProvider>
+      <Box maxWidth="80rem" mx="auto">
+        <Box height="4rem">
+          <Flex align="center" gap="4" height="100%">  
+            <Heading as="h1" size="8" weight="light">React Kanban</Heading>
+            <CreateTaskForm></CreateTaskForm>
+          </Flex>
+        </Box>
+        <Box>
+          <Heading as="h2" mb={"4"}>Quadro de tarefas</Heading>
+          <TaskBoard></TaskBoard>
+        </Box>
+      </Box>
+    </TasksContextProvider>
   )
 }
-
-export default App
