@@ -27,6 +27,20 @@
       "description": "Desenvolver os testes automatizados na nova funcionalidade do aplicativo.",
       "status": "todo",
       "priority": "medium"
+    },
+    {
+      "id": "740b",
+      "title": "Fazer a prova final da 5 etapa",
+      "description": "Realizar a prova final da 5 etapa da faculdade no dia 30/11",
+      "status": "done",
+      "priority": "high"
+    },
+    {
+      "id": "bfc0",
+      "title": "Finalizar o curso de React",
+      "description": "Finalizar o modulo de React da OneBitCode",
+      "status": "done",
+      "priority": "medium"
     }
   ]
 }
