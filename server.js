@@ -1,10 +1,8 @@
-import jsonServer from 'json-server';
+import jsonServer from 'json-server/lib/server/index.js';
 
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults({
-  static: './dist'
-});
+const middlewares = jsonServer.defaults();
 
 const port = process.env.PORT || 3000;
 
