@@ -131,7 +131,54 @@ npm run build        # Cria build de produção
 npm run preview      # Preview da build de produção
 npm run lint         # Executa o linter
 npm run json-server  # Inicia o JSON Server na porta 3000
+npm start            # Inicia o servidor em produção
 ```
+
+## Deploy no Render
+
+Este projeto pode ser facilmente implantado no Render em dois serviços separados:
+
+### 1. Deploy do Backend (JSON Server)
+
+1. Acesse [Render](https://render.com) e faça login
+2. Clique em "New +" e selecione "Web Service"
+3. Conecte seu repositório GitHub
+4. Configure o serviço:
+   - **Name**: `react-kanban-api` (ou nome de sua preferência)
+   - **Environment**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Instance Type**: `Free`
+5. Clique em "Create Web Service"
+6. Após o deploy, copie a URL do serviço (ex: `https://react-kanban-api.onrender.com`)
+
+### 2. Deploy do Frontend (React)
+
+1. No Render, clique em "New +" e selecione "Static Site"
+2. Conecte o mesmo repositório GitHub
+3. Configure o site:
+   - **Name**: `react-kanban` (ou nome de sua preferência)
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+4. Adicione uma variável de ambiente:
+   - **Key**: `VITE_API_URL`
+   - **Value**: URL do seu backend (ex: `https://react-kanban-api.onrender.com`)
+5. Clique em "Create Static Site"
+
+### Configurações Importantes
+
+- O backend (JSON Server) deve ser implantado como **Web Service** (não Static Site)
+- O frontend deve ser implantado como **Static Site**
+- Certifique-se de que a variável `VITE_API_URL` aponta para a URL correta do backend
+- O plano gratuito do Render pode ter cold start (demora inicial quando inativo)
+
+### Após o Deploy
+
+Sua aplicação estará disponível em duas URLs:
+- **Frontend**: `https://react-kanban.onrender.com` (ou o nome que você escolheu)
+- **Backend API**: `https://react-kanban-api.onrender.com` (usado internamente pelo frontend)
+
+**Nota**: No plano gratuito do Render, os serviços podem ficar inativos após 15 minutos sem uso e levar alguns segundos para reativar na primeira requisição.
 
 ## Estrutura de Dados
 
