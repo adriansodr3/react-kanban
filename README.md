@@ -180,17 +180,6 @@ Este projeto foi desenvolvido como parte da minha jornada de aprendizado em Reac
 - Hooks customizados
 - Boas práticas de desenvolvimento
 
-## Melhorias Futuras
-
-- [ ] Implementar drag and drop entre colunas
-- [ ] Adicionar filtros por prioridade
-- [ ] Sistema de busca de tarefas
-- [ ] Persistência em banco de dados real
-- [ ] Autenticação de usuários
-- [ ] Temas dark/light mode
-- [ ] Testes unitários e de integração
-- [ ] PWA (Progressive Web App)
-
 ## Licença
 
 Este projeto é de código aberto e está disponível para fins educacionais.
